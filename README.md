@@ -6,6 +6,18 @@ Offered **without warranty** and **without any claim of legal gravitas**. Assemb
 doing textual research with substantial AI assistance. Not legal advice, not an authoritative
 statement of EU law. Every claim is tied to a citation you can check — check it.
 
+Part of a family of repos that harvest primary legal sources so they can be analysed later — by a
+person or by an AI — without repeating the online research. Shared method and tooling:
+**[`id-law-kit`](https://github.com/bakobo/id-law-kit)**.
+
+| Repo | Regime | Corpus |
+|---|---|---|
+| [`utah-id-law`](https://github.com/bakobo/utah-id-law) | Utah identity-verification law | ✅ |
+| [`eu-data-law`](https://github.com/bakobo/eu-data-law) | GDPR + EU data-locality stack | ✅ |
+| **`eidas-eudi`** | eIDAS 2, EUDI wallet, ARF | ✅ |
+| [`ccpa`](https://github.com/bakobo/ccpa) | California CCPA/CPRA | ✅ |
+| [`aadhaar`](https://github.com/bakobo/aadhaar) | Aadhaar Act, UIDAI regulations, DPDP Act | ⬜ |
+
 ## What is here
 
 Two corpora, kept separate because they are different kinds of thing.
