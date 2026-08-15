@@ -24,10 +24,11 @@ Two corpora, kept separate because they are different kinds of thing.
 
 | | Items | Words | What |
 |---|---|---|---|
-| `corpus/` | 28 | 134,590 | The **legal layer** — eIDAS, eIDAS 2, the consolidated text, and 25 implementing acts, including the Jul–Dec 2025 qualified-trust-services wave |
+| `corpus/` | 32 | 199,394 | The **legal layer** — eIDAS, eIDAS 2, the consolidated text, and 29 implementing acts, including the Jul–Dec 2025 qualified-trust-services wave |
 | `corpus-arf/` | 69 | 353,744 | The **Architecture and Reference Framework**, pinned at `v3.0.0@c64f2cbb19ae` |
 
-Retrieved 2026-07-31; QTSP/trust-service layer (19 instruments) added 2026-08-14.
+Retrieved 2026-07-31; QTSP/trust-service layer (19 instruments) added 2026-08-14; wallet-package
+completion (2024/2981, 2025/1569, and the 2026/1731 standards-refresh amendment) added 2026-08-15.
 
 ```
 corpus/                one file per instrument, from EUR-Lex
