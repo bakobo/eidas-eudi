@@ -282,6 +282,15 @@ CANDIDATES = [
         expect_in_title="requirements for qualified trust service providers",
     ),
     Candidate(
+        celex="32025R2531",
+        citation="Commission Implementing Regulation (EU) 2025/2531",
+        title="Reference standards and specifications for qualified electronic ledgers",
+        authority_tier="delegated",
+        validity="in-force",
+        validity_note="",
+        expect_in_title="qualified electronic ledgers",
+    ),
+    Candidate(
         celex="32025R2532",
         citation="Commission Implementing Regulation (EU) 2025/2532",
         title="Reference standards and specifications for qualified electronic archiving",

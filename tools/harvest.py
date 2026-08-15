@@ -72,7 +72,9 @@ def main(argv=None):
                 )
 
             doc = fetcher.fetch_formex(cand.celex)
-            text = to_text(doc.body)
+            # Annexes ship as separate Formex members and are as operative as the articles;
+            # store the whole instrument in document order.
+            text = "\n".join([to_text(doc.body)] + [to_text(b) for b in doc.annex_bodies])
             written = store.write(cand.celex, text)
         except (EurLexError, FormexError) as e:
             print(f"  FAILED: {e}")
