@@ -73,7 +73,11 @@ python3 -m venv .venv && .venv/bin/pip install -e ../id-law-kit
 ## Known gaps
 
 1. **Technical specifications outside the ARF** — ETSI, CEN, W3C, OpenID. Some are not freely
-   redistributable. None are here yet; `this.i` @bqhtvm sets the policy for when they arrive.
+   redistributable, so `this.i` @bqhtvm records a pointer and a hash for those rather than the
+   text. The ETSI TS 119 472 series (Parts 1–3) is registered on those terms in
+   `sources/registry.md` §3 — Part 1 V1.2.1 matters most, because CIR (EU) 2026/1731 makes its
+   clauses 2–6 the attestation data model for every EUDI attestation. Still absent: ETSI
+   EN 319 412-1, TS 119 412-6, and the paywalled ISO/IEC 18013-5 and 18013-7.
 2. **National eID schemes and notifications.** The peer-review and notification record under
    Article 9 is where "level of assurance high" acquires operational meaning. Absent.
 3. **Member-state implementation.** eIDAS is a regulation, so transposition matters less than it
