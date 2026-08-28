@@ -3,17 +3,18 @@
 
 Why this exists
 ---------------
-Some specifications this corpus depends on cannot be stored in it: ETSI deliverables are free to
-download and not free to redistribute, so `this.i` @bqhtvm settles on pointer-and-hash, with local
-working copies in the gitignored `.ignored/specs/`. That policy is right, and it has one failure
-mode: the *asset* is invisible to git, so a reader who looks at the tracked tree concludes the
-specification was never acquired, and re-acquires it. That has now happened at least once, costing
-a round trip to a human and a wrong claim in a memo ("neither is held locally") about a document
-that had been sitting on disk for twelve days.
+Some specifications this corpus depends on cannot be stored in it: **this is a public repo**, and
+ETSI deliverables are free to download but not free to republish, so `this.i` @bqhtvm settles on
+pointer-and-hash. The citation half of that is right and unchanged. The storage half used to be a
+gitignored `.ignored/specs/`, which had one failure mode: the *asset* was invisible to git, so a
+reader who looked at the tracked tree concluded the specification had never been acquired, and
+re-acquired it. That happened, costing a round trip to a human and a wrong claim in a memo
+("neither is held locally") about a document that had been on disk for twelve days.
 
-The registry table in `sources/registry.md` §3 already carries everything needed to avoid that.
-This tool reads that table and answers the question directly, so nobody has to remember which
-document to open.
+The documents now live in the private `bakobo/not-for-redistribution` repo, which gives them a
+backup and a history without putting them in a public tree. This tool reads the registry table in
+`sources/registry.md` §3 and reports what is actually present, so nobody has to know where the
+bytes ended up or remember which document to open.
 
     python3 tools/check-specs.py
 
@@ -30,7 +31,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "sources" / "registry.md"
-SPECS = ROOT / ".ignored" / "specs"
+
+# Where the bytes live, most-current first. The private sibling repo is the home; the legacy
+# gitignored path is kept so a clone that predates the move still resolves rather than reporting
+# a false MISSING -- which is the exact error this tool exists to prevent, and it would be
+# embarrassing to reintroduce it while fixing it.
+SEARCH = [
+    ROOT.parent / "not-for-redistribution" / "etsi",
+    ROOT / ".ignored" / "specs",
+]
+
+
+def locate(filename: str) -> Path | None:
+    for d in SEARCH:
+        p = d / filename
+        if p.exists():
+            return p
+    return None
 
 ROW = re.compile(
     r"^\|\s*(?P<spec>ETSI[^|]+?)\s*\|"       # spec name
@@ -68,11 +85,15 @@ def main() -> int:
     print(f"{len(entries)} specification(s) registered in sources/registry.md §3\n")
     for e in entries:
         name = re.sub(r"\s+—.*", "", e["spec"])
-        path = SPECS / e["file"]
-        if not path.exists():
+        path = locate(e["file"])
+        if path is None:
             print(f"  MISSING   {name} {e['version']}")
-            print(f"            expected at {path.relative_to(ROOT)}")
-            print("            ETSI 403s automated clients; download via a browser from")
+            print(f"            looked for {e['file']} in:")
+            for d in SEARCH:
+                print(f"              {d}")
+            print("            The first is the private bakobo/not-for-redistribution repo —")
+            print("            clone it beside this one if you have not. Otherwise: ETSI 403s")
+            print("            automated clients, so download in a browser from")
             print("            https://www.etsi.org/standards-search")
             bad += 1
             continue
@@ -90,8 +111,9 @@ def main() -> int:
     if bad:
         print(f"{bad} of {len(entries)} unusable. Cite nothing that is missing or mismatched.")
     else:
-        print(f"All present in {SPECS.relative_to(ROOT)} and hash-verified.")
-        print("Reminder: pointer-and-hash means quote from your own copy, never paste text here.")
+        print("All present and hash-verified.")
+        print("Reminder: this repo is PUBLIC and these documents are not republishable —")
+        print("cite the clause, quote from your own copy, never paste the text into this tree.")
     return 1 if bad else 0
 
 

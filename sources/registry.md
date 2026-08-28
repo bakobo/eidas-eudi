@@ -33,19 +33,33 @@ below the legal text. Where a specification is **not freely redistributable**, t
 pointer and a hash instead of the text, and cannot satisfy quote-or-drop — cite the clause, quote
 from your own downloaded copy, do not paste the text into this repo.
 
-ETSI deliverables are free to *download* and not free to *redistribute*: "No part of this document
-may be reproduced in any form, by any means and in any media, without the prior written
-authorization of ETSI," excepting only extracts strictly necessary for technical implementation.
-So no ETSI PDF is stored here. The local working copies live in `../.ignored/specs/`, which is
-gitignored, and are reproducible from the URL below by anyone who wants them.
+ETSI deliverables are free to *download* and not free to *republish*. **This repo is public**, so
+no ETSI PDF is stored here. The notice on the versions held reads, in full:
+
+> No part may be reproduced or utilized in any form or by any means, electronic or mechanical,
+> including photocopying and microfilm except as authorized by written permission of ETSI. The
+> content of the PDF version shall not be modified without the written authorization of ETSI. The
+> copyright and the foregoing restriction extend to reproduction in all media.
+
+**Corrected 2026-08-28:** an earlier revision of this section paraphrased the notice as "excepting
+only extracts strictly necessary for technical implementation." That exception appears in some
+older ETSI deliverables and **not** in TS 119 461 V2.1.1 or TS 119 475 V1.2.1. Do not rely on it.
+
+**The working copies live in the private `bakobo/not-for-redistribution` repo**, under `etsi/`,
+with its own manifest and charter — moved there on 2026-08-28 from a gitignored `.ignored/specs/`,
+which left them on one machine with no backup and invisible to anyone reading the tracked tree.
+That invisibility produced a wrong claim in a downstream memo about a document already on disk.
+`../tools/check-specs.py` resolves either location, so an older clone still works.
 
 The source URL follows ETSI's deliverable naming convention and could not be verified by fetch —
-etsi.org answers 403 to automated clients. The SHA-256 is the authoritative identity check: hash
-your download and compare. If the URL 404s, search <https://www.etsi.org/standards-search> for the
-deliverable number.
+etsi.org answers 403 to automated clients, including scripted requests carrying a full browser
+User-Agent, Referer and Accept headers; the directory listings are blocked the same way. Download
+in a browser. The SHA-256 is the authoritative identity check: hash your download and compare. If
+the URL 404s, search <https://www.etsi.org/standards-search> for the deliverable number.
 
-Filenames follow ETSI's convention exactly, so the table's `file` column and the download are the
-same name. Run `python3 ../tools/check-specs.py` to verify every row against what is on disk.
+Filenames follow ETSI's convention exactly, so the table's `file` column, the download and the
+manifest row in the other repo all agree. Run `python3 ../tools/check-specs.py` to verify every row
+against what is on disk.
 
 | Spec | Version | Pages | Retrieved | SHA-256 | Bytes | File |
 |---|---|---|---|---|---|---|
