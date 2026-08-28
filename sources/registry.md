@@ -44,11 +44,16 @@ etsi.org answers 403 to automated clients. The SHA-256 is the authoritative iden
 your download and compare. If the URL 404s, search <https://www.etsi.org/standards-search> for the
 deliverable number.
 
-| Spec | Version | Pages | Retrieved | SHA-256 | Bytes |
-|---|---|---|---|---|---|
-| ETSI TS 119 472-1 — Profiles for EAA, Part 1: General requirements | V1.2.1 (2026-02) | 68 | 2026-08-16 | `0f76ce7cad5f046802146b0c2a9cd8af9db3c1db77db5eeca86d2a4559fcfc3f` | 523,959 |
-| ETSI TS 119 472-2 — Part 2: Profiles for EAA/PID presentations to relying party | V1.3.1 (2026-07) | 26 | 2026-08-16 | `e403e7d5a4c70d04868989cc623b57d379a5f3dfe282f9f98f7390c8e327310b` | 174,632 |
-| ETSI TS 119 472-3 — Part 3: Profiles for issuance of EAA or PID | V1.1.1 (2026-03) | 24 | 2026-08-16 | `2919437478c7469881afc5acd5aa68d847a4cfdc1bbf6da9224f4c9fae7167ba` | 143,808 |
+Filenames follow ETSI's convention exactly, so the table's `file` column and the download are the
+same name. Run `python3 ../tools/check-specs.py` to verify every row against what is on disk.
+
+| Spec | Version | Pages | Retrieved | SHA-256 | Bytes | File |
+|---|---|---|---|---|---|---|
+| ETSI TS 119 461 — Policy and security requirements for trust service components providing identity proofing of trust service subjects | V2.1.1 (2025-02) | 81 | 2026-08-28 | `4f8f821a7063b14b704cd5040540bf442e367ba6234591119ffe3d24ca845bd3` | 608,090 | `ts_119461v020101p.pdf` |
+| ETSI TS 119 475 — Relying party attributes supporting EUDI Wallet user's authorization decisions | V1.2.1 (2026-03) | 46 | 2026-08-28 | `77bf8e71715c495494113da23ccba89c0af8bf6b457fe2da38b5a12738ace55f` | 362,008 | `ts_119475v010201p.pdf` |
+| ETSI TS 119 472-1 — Profiles for EAA, Part 1: General requirements | V1.2.1 (2026-02) | 68 | 2026-08-16 | `0f76ce7cad5f046802146b0c2a9cd8af9db3c1db77db5eeca86d2a4559fcfc3f` | 523,959 | `ts_11947201v010201p.pdf` |
+| ETSI TS 119 472-2 — Part 2: Profiles for EAA/PID presentations to relying party | V1.3.1 (2026-07) | 26 | 2026-08-16 | `e403e7d5a4c70d04868989cc623b57d379a5f3dfe282f9f98f7390c8e327310b` | 174,632 | `ts_11947202v010301p.pdf` |
+| ETSI TS 119 472-3 — Part 3: Profiles for issuance of EAA or PID | V1.1.1 (2026-03) | 24 | 2026-08-16 | `2919437478c7469881afc5acd5aa68d847a4cfdc1bbf6da9224f4c9fae7167ba` | 143,808 | `ts_11947203v010101p.pdf` |
 
 Source URLs follow ETSI's deliverable convention,
 `https://www.etsi.org/deliver/etsi_ts/119400_119499/1194720N/0V.0V.0V_60/ts_1194720Nv0V0V0Vp.pdf`

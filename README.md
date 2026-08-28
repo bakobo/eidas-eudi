@@ -74,10 +74,13 @@ python3 -m venv .venv && .venv/bin/pip install -e ../id-law-kit
 
 1. **Technical specifications outside the ARF** — ETSI, CEN, W3C, OpenID. Some are not freely
    redistributable, so `this.i` @bqhtvm records a pointer and a hash for those rather than the
-   text. The ETSI TS 119 472 series (Parts 1–3) is registered on those terms in
-   `sources/registry.md` §3 — Part 1 V1.2.1 matters most, because CIR (EU) 2026/1731 makes its
-   clauses 2–6 the attestation data model for every EUDI attestation. Still absent: ETSI
-   EN 319 412-1, TS 119 412-6, and the paywalled ISO/IEC 18013-5 and 18013-7.
+   text. **Registered specifications are held on disk in `.ignored/specs/`, not in `corpus/` —
+   run `python3 tools/check-specs.py` to see what is actually present**, hash-verified against
+   `sources/registry.md` §3. Currently registered: ETSI TS 119 461 V2.1.1 (adopted normatively
+   by CIR (EU) 2025/1566 for identity proofing), TS 119 475 V1.2.1 (relying-party attributes),
+   and the TS 119 472 series Parts 1–3 — Part 1 V1.2.1 matters most, because CIR (EU) 2026/1731
+   makes its clauses 2–6 the attestation data model for every EUDI attestation. Still absent:
+   ETSI EN 319 412-1, TS 119 412-6, and the paywalled ISO/IEC 18013-5 and 18013-7.
 2. **National eID schemes and notifications.** The peer-review and notification record under
    Article 9 is where "level of assurance high" acquires operational meaning. Absent.
 3. **Member-state implementation.** eIDAS is a regulation, so transposition matters less than it

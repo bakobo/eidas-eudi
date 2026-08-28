@@ -100,6 +100,22 @@ the live endpoints still answer.
 7. **The ARF is not law.** Its manifest entries sit at the lowest authority tier deliberately. A
    specification cannot override an implementing act, and a finding that cites the ARF against a
    Commission regulation has its ordering backwards.
+8. **Absence from `corpus/` is not absence.** Two different things are missing from the tracked
+   tree for two different reasons, and both have already produced a wrong claim in a downstream
+   memo.
+   - **ETSI and other non-redistributable specifications are held, but not here.** `this.i`
+     @bqhtvm settles on pointer-and-hash; the PDFs live in the gitignored `.ignored/specs/` and
+     are registered in `sources/registry.md` §3. **Run `python3 tools/check-specs.py` before
+     saying a specification is not held** — it reads that table and reports what is on disk,
+     hash-verified. Incident: a memo asserted TS 119 472-3 was "not held locally" while it had
+     been on disk for twelve days, because the reader checked `corpus/` and the README summary
+     and never opened the registry.
+   - **The corpus can also simply have a hole.** Its scope is `tools/candidates.py`, and a
+     candidate can be omitted by accident without anything looking wrong. Incident: CIR (EU)
+     2025/1566 sat between 1567, 1569 and 1572 — all present — and its absence was read as
+     proof the Article 24(1c) act had never been adopted. It had. Before resting an argument on
+     something not existing, check EUR-Lex directly with `tools/recon.py`; an absence claim is a
+     claim about the world, and this corpus is a curated view of it.
 
 <!-- >>> tick stanza >>> (managed by `tick init`) -->
 
