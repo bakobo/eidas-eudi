@@ -26,6 +26,30 @@ licensed CC BY 4.0 by the European Commission. Refresh with `tools/harvest-arf.p
 Per-document URL, hash, and size are in `../corpus-arf/MANIFEST.tsv`; they are not repeated here
 because the pinned tag plus the commit SHA is the citable unit.
 
+## 2a. Open technical specifications (`../corpus-specs/`) — text stored
+
+Not every specification outside the legislative process has to be pointer-and-hash. The OpenID
+Foundation grants "a non-exclusive, royalty free, worldwide copyright license to reproduce, prepare
+derivative works from, distribute, perform and display" its specifications "solely for the purposes
+of (i) developing specifications, and (ii) implementing" them, with attribution to OIDF. Bakobo is
+an implementer, so these are stored in full and satisfy quote-or-drop. Authority tier `standard` —
+below the legal instruments, per `../this.i` @bqhtvm.
+
+They are here because ETSI TS 119 472-3 profiles them normatively: it requires Wallet Units and
+PID/EAA Providers to implement OpenID4VCI as constrained by OpenID4VC-HAIP clause 4
+(GEN-REQ-4.1-01, -02), so a claim about EU issuance mechanics usually bottoms out in one of these
+three documents rather than in an implementing act.
+
+| Item | Title | Local |
+|---|---|---|
+| `openid4vci-1_0` | OpenID for Verifiable Credential Issuance 1.0 | `../corpus-specs/openid4vci-1_0.txt.gz` |
+| `openid4vp-1_0` | OpenID for Verifiable Presentations 1.0 | `../corpus-specs/openid4vp-1_0.txt.gz` |
+| `openid4vc-haip-1_0` | OpenID4VC High Assurance Interoperability Profile 1.0 | `../corpus-specs/openid4vc-haip-1_0.txt.gz` |
+
+Retrieved 2026-08-28 from `https://openid.net/specs/`; per-item hashes in
+`../corpus-specs/MANIFEST.tsv`. Stored as extracted text, so a clause number is the citable unit
+and the HTML rendering is not preserved — refetch the source URL if layout matters.
+
 ## 3. Technical specifications — pointer and hash only, no text stored
 
 Per `../this.i` @bqhtvm, specifications produced outside the legislative process are corpus, ranked

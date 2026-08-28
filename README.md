@@ -20,12 +20,13 @@ person or by an AI — without repeating the online research. Shared method and 
 
 ## What is here
 
-Two corpora, kept separate because they are different kinds of thing.
+Three corpora, kept separate because they are different kinds of thing.
 
 | | Items | Words | What |
 |---|---|---|---|
 | `corpus/` | 32 | 199,394 | The **legal layer** — eIDAS, eIDAS 2, the consolidated text, and 29 implementing acts, including the Jul–Dec 2025 qualified-trust-services wave |
 | `corpus-arf/` | 69 | 353,744 | The **Architecture and Reference Framework**, pinned at `v3.0.0@c64f2cbb19ae` |
+| `corpus-specs/` | 3 | 67,569 | **Open technical specifications** — OpenID4VCI, OpenID4VP and OpenID4VC-HAIP, stored in full under OIDF's implementer licence, at authority tier `standard` |
 
 Retrieved 2026-07-31; QTSP/trust-service layer (19 instruments) added 2026-08-14; wallet-package
 completion (2024/2981, 2025/1569, and the 2026/1731 standards-refresh amendment) added 2026-08-15.
@@ -33,6 +34,7 @@ completion (2024/2981, 2025/1569, and the 2026/1731 standards-refresh amendment)
 ```
 corpus/                one file per instrument, from EUR-Lex
 corpus-arf/            the ARF release, one file per document
+corpus-specs/          open technical specifications, stored in full under their own licences
 */MANIFEST.tsv         citation, authority tier, validity, version, URL, date, bytes, SHA-256
 tools/candidates.py    the instrument list — this file IS the legal-layer scope
 tools/recon.py         verify a CELEX list against EUR-Lex before harvesting it
@@ -100,6 +102,10 @@ Attribution: Bakobo, *eidas-eudi*.
 `corpus/` is the text of EU legal instruments, © European Union, reproduced under
 [Commission Decision 2011/833/EU](http://eur-lex.europa.eu/eli/dec/2011/833/oj) with
 acknowledgement of source. **Only the text published in the printed Official Journal is authentic.**
+
+`corpus-specs/` holds OpenID Foundation specifications, © The OpenID Foundation, reproduced under
+the licence in each document, which grants a royalty-free right to reproduce and distribute for the
+purposes of developing specifications and implementing them, with attribution to OIDF as the source.
 
 `corpus-arf/` is the European Digital Identity Wallet Architecture and Reference Framework,
 © 2026 European Commission, licensed **CC BY 4.0** by its publisher — see the `LICENCE` file in
