@@ -237,6 +237,20 @@ CANDIDATES = [
         expect_in_title="registration of wallet-relying parties",
     ),
     # The Jul–Dec 2025 qualified-trust-services wave:
+    # Added 2026-08-28: 1566 sat between instruments already harvested and was missed, which
+    # let a memo in bakobo/interop conclude the Article 24(1c) act had never been adopted. It
+    # is the act, and it is the door for anyone arguing a non-enumerated identity-verification
+    # method to a conformity assessment body under Article 24(1a)(c)/(1b)(d).
+    Candidate(
+        celex="32025R1566",
+        citation="Commission Implementing Regulation (EU) 2025/1566",
+        title="Reference standards for verification of identity and attributes (Art. 24(1c))",
+        authority_tier="delegated",
+        validity="in-force",
+        validity_note="Reported to apply from 19 August 2027 — confirm the application date "
+        "against the text; the gap between entry into force and application is load-bearing.",
+        expect_in_title="verification of the identity",
+    ),
     Candidate(
         celex="32025R1567",
         citation="Commission Implementing Regulation (EU) 2025/1567",
